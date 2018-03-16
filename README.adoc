@@ -9,7 +9,7 @@ The sources of the client library we use to connect to ID4i along with further d
 
 == Prerequisites
 
-* .NET Core SDK >= 2.0
+* .NET Core SDK >= 1.3
 
 == Preparation
 
