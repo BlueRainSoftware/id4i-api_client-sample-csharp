@@ -5,5 +5,5 @@ jobs:
       - image: microsoft/dotnet:1-sdk
     steps:
       - checkout
-      - run: dotnet restore
-      - run: dotnet build
+      - run: cd ID4iClientSample && dotnet restore
+      - run: cd ID4iClientSample && dotnet build
