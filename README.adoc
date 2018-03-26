@@ -1,3 +1,8 @@
+
+image:https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg[CircleCI,link=https://circleci.com/gh/BlueRainSoftware/id4i-api_client-sample-csharp]
+image:https://img.shields.io/gitter/room/nwjs/nw.js.svg?label=Support%20Chat[Support Chat,link=https://gitter.im/BlueRainSoftware/support]
+image:https://img.shields.io/nuget/v/BlueRain.ID4i.svg?label=API%20Client%20Library[API Client Version, link=https://www.nuget.org/packages/BlueRain.ID4i/]
+
 = ID4i API Client Example - C#
 
 ID4i provides globally unique IDs for single workpieces and a platform to manage, and exchange data bound to IDs in an inter-organizational manner. For details, please refer to http://id4i.de.
