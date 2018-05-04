@@ -59,7 +59,7 @@ class AppInfoPresentation {
   CommitTime: 2018-03-16T14:51:47+0000
   Name: ID4i
   Revision: 4584e5c
-  Version: 0.3.0
+  Version: 0.6.0
 }
 ```
 
@@ -70,3 +70,48 @@ dotnet new console -o ID4iClientSample
 dotnet add package BlueRain.ID4i
 dotnet add package System.IdentityModel.Tokens.Jwt
 ```
+
+== Build within docker
+
+We provide a `Dockerfile` to run the build on non-windows machines. To build the container and run the sample, do the following.
+
+[source, bash]
+```
+$ docker build -t id4i-csharp-sample:latest .
+Step 1/5 : FROM microsoft/dotnet:1-sdk
+ ---> 6946b52e7215
+Step 2/5 : WORKDIR /app
+ ---> Using cache
+ ---> 4ce559a3c5b1
+Step 3/5 : COPY ID4iClientSample/* /app/
+ ---> Using cache
+ ---> 6391678eb4ba
+Step 4/5 : RUN dotnet restore
+ ---> Using cache
+ ---> fa0829d486fb
+Step 5/5 : RUN dotnet build
+ ---> Using cache
+ ---> f5ebc4895e10
+Successfully built f5ebc4895e10
+Successfully tagged id4i-csharp-sample:latest
+
+# built successfully, now run
+$ docker run \
+ -e ID4I_API_KEY=<your API key> \ <1>
+ -e ID4I_API_SECRET=<your API key secret> \ <2>
+ id4i-csharp-sample \ <3>
+ dotnet run <4>
+
+{
+    "name": "ID4i",
+    "revision": "3089680",
+    "branch": "master",
+    "commitTime": "2018-04-23T13:12:13+0000",
+    "version": "0.6.0",
+    "productionMode": true
+}
+```
+<1> A valid API Key, this is passed to the container as environment varibale
+<2> Your API key secret, required to sign the JWT. Exposed in the container's environment as well
+<3> The image to start
+<4> The command to run in the image
