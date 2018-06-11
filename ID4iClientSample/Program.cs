@@ -15,6 +15,7 @@ namespace Example
             string authorization = Authorization();
             Configuration.Default.AddApiKey("Authorization", authorization);
             Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            Configuration.Default.BasePath = "https://sandbox.id4i.de";
 
             var apiInstance = new MetaInformationApi();
 

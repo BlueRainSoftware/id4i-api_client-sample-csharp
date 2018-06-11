@@ -22,7 +22,7 @@ To be able to connect to ID4i with an API client, you need to register and set u
 your application first. Using this key, you can sign https://jwt.io/[JWTs] to send as `Authorization` header for
 subsequent requests.
 
-. If you do not already have an ID4i account, please register at https://backend.id4i.de and log in.
+. If you do not already have an ID4i sandbox account, please register at https://sandbox.id4i.de and log in.
 . Navigate to `API Keys` and select `New API Key`
 +
 .New API Key
@@ -49,13 +49,13 @@ application. Use a separate API Key for each deployment of your application.
 Once you have set up your API key, you need to set the environment variables `ID4I_API_KEY` and `ID4I_API_SECRET` to reflect your key.
 You can then run the project using `dotnet run`.
 
-You should see some information about the version running on the https://backend.id4i.de now:
+You should see some information about the version running on the https://sandbox.id4i.de now:
 
 ```
 $ dotnet run
 
 class AppInfoPresentation {
-  Branch: master
+  Branch: sandbox
   CommitTime: 2018-03-16T14:51:47+0000
   Name: ID4i
   Revision: 4584e5c
@@ -105,7 +105,7 @@ $ docker run \
 {
     "name": "ID4i",
     "revision": "3089680",
-    "branch": "master",
+    "branch": "sandbox",
     "commitTime": "2018-04-23T13:12:13+0000",
     "version": "0.6.0",
     "productionMode": true
